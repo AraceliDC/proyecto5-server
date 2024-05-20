@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
     }
 
     try {
-        const openToken = jwt.verify(token, process.env.SECRET)    
+        const openToken = jwt.verify(token, process.env.JWT_SECRET)    
 
         req.user = openToken.user
 

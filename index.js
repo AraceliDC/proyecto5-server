@@ -172,7 +172,7 @@ app.post("/usuario/crear", async (req, res) => {
         // 2. FIRMAR EL JWT
         jwt.sign(
             payload, // DATOS QUE SE ACOMPAÑARÁN EN EL TOKEN
-            process.env.SECRET, // LLAVE PARA DESCIFRAR LA FIRMA ELECTRÓNICA DEL TOKEN,
+            process.env.JWT_SECRET, // LLAVE PARA DESCIFRAR LA FIRMA ELECTRÓNICA DEL TOKEN,
             {
                 expiresIn: 360000 // EXPIRACIÓN DEL TOKEN
             },
@@ -230,7 +230,7 @@ app.post("/usuario/iniciar-sesion", async (req, res) => {
         // 2. FIRMA DEL JWT
         jwt.sign(
             payload,
-            process.env.SECRET,
+            process.env.JWT_SECRET,
             {
                 expiresIn: 3600000
             },
