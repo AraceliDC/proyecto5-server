@@ -8,7 +8,7 @@ const UserSchema = mongoose.Schema({
     },
     lastname: {
         type: String,
-        default: ""
+        required: true
     },
     country: {
         type: String,

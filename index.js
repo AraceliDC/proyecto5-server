@@ -155,6 +155,7 @@ app.post("/usuario/crear", async (req, res) => {
         // CREAMOS UN USUARIO CON SU PASSWORD ENCRIPTADO
         const respuestaDB = await Usuario.create({
             name,
+            lastname,
             email,
             password: hashedPassword
         })
