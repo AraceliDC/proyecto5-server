@@ -145,7 +145,7 @@ app.delete("/borrar-guitarra", async (req, res) => {
 app.post("/usuario/crear", async (req, res) => {
 
     // OBTENER USUARIO, EMAIL Y PASSWORD DE LA PETICIÓN
-    const { name, email, password } = req.body
+    const { name,lastname, email, password } = req.body
 
     try {
         // GENERAMOS FRAGMENTO ALEATORIO PARA USARSE CON EL PASSWORD
