@@ -33,7 +33,7 @@ const mercadopago = require("mercadopago")
 const { update } = require('./models/Guitar')
 
 mercadopago.configure({
-    access_token: process.env.PROD_ACCESS_TOKEN_VENDEDOR
+    access_token: "TEST-695027965126634-121802-510b23c7e4759300bfa01dc4bd7d8e09-309278269"
 })
 
 
@@ -172,7 +172,7 @@ app.post("/usuario/crear", async (req, res) => {
         // 2. FIRMAR EL JWT
         jwt.sign(
             payload, // DATOS QUE SE ACOMPAÑARÁN EN EL TOKEN
-            process.env.JWT_SECRET, // LLAVE PARA DESCIFRAR LA FIRMA ELECTRÓNICA DEL TOKEN,
+            process.env.SECRET, // LLAVE PARA DESCIFRAR LA FIRMA ELECTRÓNICA DEL TOKEN,
             {
                 expiresIn: 360000 // EXPIRACIÓN DEL TOKEN
             },
@@ -230,7 +230,7 @@ app.post("/usuario/iniciar-sesion", async (req, res) => {
         // 2. FIRMA DEL JWT
         jwt.sign(
             payload,
-            process.env.JWT_SECRET,
+            process.env.SECRET,
             {
                 expiresIn: 3600000
             },
