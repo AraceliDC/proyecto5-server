@@ -33,7 +33,7 @@ const mercadopago = require("mercadopago")
 const { update } = require('./models/Guitar')
 
 mercadopago.configure({
-    access_token: "TEST-695027965126634-121802-510b23c7e4759300bfa01dc4bd7d8e09-309278269"
+    access_token: process.env.PROD_ACCESS_TOKEN_VENDEDOR
 })
 
 
